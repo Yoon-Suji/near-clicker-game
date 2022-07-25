@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/near-clicker-game/static/css/main.b42783e8.chunk.css",
+    "main.js": "/near-clicker-game/static/js/main.7be36b12.chunk.js",
+    "main.js.map": "/near-clicker-game/static/js/main.7be36b12.chunk.js.map",
+    "runtime-main.js": "/near-clicker-game/static/js/runtime-main.946d7f2b.js",
+    "runtime-main.js.map": "/near-clicker-game/static/js/runtime-main.946d7f2b.js.map",
+    "static/js/2.492eb0f7.chunk.js": "/near-clicker-game/static/js/2.492eb0f7.chunk.js",
+    "static/js/2.492eb0f7.chunk.js.map": "/near-clicker-game/static/js/2.492eb0f7.chunk.js.map",
+    "index.html": "/near-clicker-game/index.html",
+    "static/css/main.b42783e8.chunk.css.map": "/near-clicker-game/static/css/main.b42783e8.chunk.css.map",
+    "static/js/2.492eb0f7.chunk.js.LICENSE.txt": "/near-clicker-game/static/js/2.492eb0f7.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.946d7f2b.js",
+    "static/js/2.492eb0f7.chunk.js",
+    "static/css/main.b42783e8.chunk.css",
+    "static/js/main.7be36b12.chunk.js"
+  ]
+}
