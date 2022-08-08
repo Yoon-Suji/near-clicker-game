@@ -28,23 +28,6 @@ const Play = () => {
   const [timerId, setTimerId] = useState();
   const location = useLocation();
 
-  //   // 페이지가 렌더링될 때 client 를 생성해서 저장
-  //   useEffect(() => {
-  //     const getClient = async (chainId) => {
-  //       // Keplr에 해당 chainId로의 접근 요청
-  //       await window.keplr.enable(chainId);
-  //       // 체인 ID를 이용해서 OfflineSigner 가져오기
-  //       const offlineSigner = window.getOfflineSigner(chainId);
-  //       // SigningCosmWasmClient 생성
-  //       const client = await SigningCosmWasmClient.connectWithSigner(
-  //         networkInfo[chainId].rpc,
-  //         offlineSigner
-  //       );
-  //       setClient(client);
-  //     };
-  //     getClient(location.state.chainId);
-  //   }, []);
-
   // time이 변하는 것을 감지하여 0이 될때 게임 종료
   useEffect(() => {
     if (time === 0) {
@@ -147,7 +130,7 @@ const Play = () => {
         {/* <img src="/Background.svg" alt="background" id="background"></img> */}
         {gameStart && (
           <img
-            src="./near-mark.svg"
+            src={process.env.PUBLIC_URL + "/near-mark.svg"}
             alt="Target"
             id="target"
             style={{ position: "absolute", ...targetPosition }}

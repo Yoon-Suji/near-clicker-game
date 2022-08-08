@@ -5,7 +5,6 @@ import { formatNearAmount } from "near-api-js/lib/utils/format";
 const nearEnv = environment("testnet");
 
 export async function initContract() {
-  console.log(process.env.REACT_APP_CONTRACT_NAME);
   // connect to NEAR
   const near = await connect(
     Object.assign(
@@ -20,7 +19,7 @@ export async function initContract() {
 
   window.accountId = window.walletConnection.getAccountId();
 
-  window.account = await near.account(window.accountId);
+  // window.account = await near.account(window.accountId);
 
   window.contract = await new Contract(
     window.walletConnection.account(),
@@ -48,7 +47,7 @@ export async function reset() {
 export function logout() {
   window.walletConnection.signOut();
   // reload page
-  window.location.replace(window.location.origin + window.location.pathname);
+  window.location.reload();
 }
 
 export function login() {

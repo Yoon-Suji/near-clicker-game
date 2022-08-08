@@ -12,7 +12,7 @@ window.nearInitPromise = initContract()
     root.render(
       <React.StrictMode>
         <div className="App-header">
-          <BrowserRouter>
+          <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Routes>
               <Route path="/" element={<App />} />
               <Route path="/play" element={<Play />} />
@@ -21,7 +21,11 @@ window.nearInitPromise = initContract()
 
           <div className="footer-container">
             <span>Made with</span>
-            <img src="./dsrv.png" id="footer-logo" alt="dsrv-logo"></img>
+            <img
+              src={process.env.PUBLIC_URL + "/dsrv.png"}
+              id="footer-logo"
+              alt="dsrv-logo"
+            ></img>
           </div>
         </div>
       </React.StrictMode>

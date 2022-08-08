@@ -1,4 +1,5 @@
-const CONTRACT_NAME = process.env.CONTRACT_NAME || "contract account name";
+const CONTRACT_NAME =
+  process.env.CONTRACT_NAME || "mycontract.myaccount8.testnet";
 
 function environment(env) {
   switch (env) {
@@ -14,9 +15,9 @@ function environment(env) {
     case "testnet": // line 14
       return {
         networkId: "testnet",
-        nodeUrl: "https://rpc.testnet.near.org",
+        nodeUrl: "https://near-testnet-rpc.allthatnode.com:3030",
         contractName: CONTRACT_NAME,
-        walletUrl: "https://wallet.testnet.near.org",
+        walletUrl: "https://wallet.testnet.near.org/",
         helperUrl: "https://helper.testnet.near.org",
         explorerUrl: "https://explorer.testnet.near.org"
       };

@@ -4,17 +4,17 @@ import { useNavigate } from "react-router-dom";
 import { login, logout, accountBalance, get_num } from "./near/utils";
 
 function App() {
-  const account = window.walletConnection.account();
+  const account = window.accountId;
   const [balance, setBalance] = useState();
   const [visible, setVisible] = useState("hidden");
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (account.accountId) {
+    if (account) {
       getBalance();
       setVisible("visible");
     }
-  }, [account.accountId]);
+  }, [account]);
 
   const getBalance = async () => {
     setBalance(await accountBalance());
@@ -28,7 +28,7 @@ function App() {
 
   // 네트워크 별로 chainId에 따라서 DISCONNECT와 CONNECT 버튼이 나타나도록 구현
   const renderBtn = () => {
-    if (account.accountId) {
+    if (account) {
       return (
         <button type="button" onClick={logout} className="disconnect-btn">
           DISCONNECT
@@ -44,10 +44,10 @@ function App() {
 
   // 지갑과 연결되어 있으면 address와 balance 정보 출력
   const showWalletInfo = () => {
-    if (account.accountId) {
+    if (account) {
       return (
         <div className="wallet-info">
-          <p>{`address: ${account.accountId}`}</p>
+          <p>{`address: ${account}`}</p>
           <p>{`balance: ${balance} NEAR`}</p>
         </div>
       );
@@ -69,9 +69,9 @@ function App() {
         >
           <span>PLAY</span>
         </button>
-        {!account.accountId && <p>Choose your network and Connect wallet</p>}
-        {account.accountId && (
-          <p>Click as many CosmWasm Icon as you can within 15 seconds!</p>
+        {!account && <p>Choose your network and Connect wallet</p>}
+        {account && (
+          <p>Click as many NEAR Icon as you can within 15 seconds!</p>
         )}
       </div>
     );
@@ -84,7 +84,7 @@ function App() {
           <img
             alt="NEAR Logo"
             className="near-logo"
-            src="./near_logo.svg"
+            src={process.env.PUBLIC_URL + "/near_logo.svg"}
             width="500"
           />
           <h1>Clicker Game</h1>
